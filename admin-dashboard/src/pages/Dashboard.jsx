@@ -1,36 +1,44 @@
-import { Grid, Card, CardContent, Typography } from "@mui/material";
+import { Box, Grid, Card, CardMedia, CardContent, Typography } from "@mui/material";
 
 const Dashboard = () => {
   return (
-    <div>
-      <Typography variant="h4" mb={2}>Admin Dashboard</Typography>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={3}>
-          <Card>
+    <Box p={3}>
+      <Typography variant="h4" mb={3} fontWeight="bold">
+        📸 Family Album Dashboard
+      </Typography>
+
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={4}>
+          <Card sx={{ borderRadius: 3, boxShadow: 4 }}>
+            <CardMedia
+              component="img"
+              height="180"
+              image="https://images.unsplash.com/photo-1519682337058-a94d519337bc"
+              alt="Family Photos"
+            />
             <CardContent>
-              <Typography variant="h6">Total Users</Typography>
-              <Typography variant="h4">120</Typography>
+              <Typography variant="h6" fontWeight="600">Photos</Typography>
+              <Typography color="text.secondary">View all family photos</Typography>
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={3}>
-          <Card>
+
+        <Grid item xs={12} md={4}>
+          <Card sx={{ borderRadius: 3, boxShadow: 4 }}>
+            <CardMedia
+              component="img"
+              height="180"
+              image="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+              alt="Family Videos"
+            />
             <CardContent>
-              <Typography variant="h6">Total Products</Typography>
-              <Typography variant="h4">50</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} md={3}>
-          <Card>
-            <CardContent>
-              <Typography variant="h6">Orders</Typography>
-              <Typography variant="h4">300</Typography>
+              <Typography variant="h6" fontWeight="600">Videos</Typography>
+              <Typography color="text.secondary">Watch family memories</Typography>
             </CardContent>
           </Card>
         </Grid>
       </Grid>
-    </div>
+    </Box>
   );
 };
 
