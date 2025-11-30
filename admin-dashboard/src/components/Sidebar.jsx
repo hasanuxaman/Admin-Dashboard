@@ -1,13 +1,22 @@
-import { Drawer, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { Drawer, List, ListItem, ListItemIcon, ListItemText, Toolbar } from "@mui/material";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PeopleIcon from "@mui/icons-material/People";
-import InventoryIcon from "@mui/icons-material/Inventory";
-import AssessmentIcon from "@mui/icons-material/Assessment";
 import { Link } from "react-router-dom";
+
+const drawerWidth = 240;
 
 const Sidebar = () => {
   return (
-    <Drawer variant="permanent" anchor="left">
+    <Drawer
+      variant="permanent"
+      sx={{
+        width: drawerWidth,
+        flexShrink: 0,
+        '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box' },
+      }}
+    >
+      {/* To offset the navbar */}
+      <Toolbar />
       <List>
         <ListItem button component={Link} to="/">
           <ListItemIcon><DashboardIcon /></ListItemIcon>
@@ -16,14 +25,6 @@ const Sidebar = () => {
         <ListItem button component={Link} to="/users">
           <ListItemIcon><PeopleIcon /></ListItemIcon>
           <ListItemText primary="Users" />
-        </ListItem>
-        <ListItem button component={Link} to="/products">
-          <ListItemIcon><InventoryIcon /></ListItemIcon>
-          <ListItemText primary="Products" />
-        </ListItem>
-        <ListItem button component={Link} to="/reports">
-          <ListItemIcon><AssessmentIcon /></ListItemIcon>
-          <ListItemText primary="Reports" />
         </ListItem>
       </List>
     </Drawer>
