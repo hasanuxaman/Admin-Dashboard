@@ -2,7 +2,7 @@ import { Box, Grid, Card, CardMedia, CardContent, Typography } from "@mui/materi
 
 const Dashboard = () => {
   return (
-    <Box p={3}>
+    <Box p={1}>
       <Typography variant="h4" mb={3} fontWeight="bold">
         📸 Family Album Dashboard
       </Typography>
